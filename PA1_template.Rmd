@@ -24,7 +24,7 @@ tail(data_needed)
 
 <H2>What is mean total number of steps taken per day?</H2>
 The data is grouped together by date.
-```{r second}
+```{r}
 data_group_date=group_by(data_needed,date)
 ggplot(data_group_date, aes(date, steps)) + geom_bar(stat = "identity", colour = "#003399", fill = "#003399", width = 0.7) +  labs(title = "Histogram of Total Number of Steps Taken Each Day", x = "Date", y = "Total number of steps")
 summarise(data_group_date, mean(steps),median(steps))
@@ -32,7 +32,7 @@ summarise(data_group_date, mean(steps),median(steps))
 
 <H2>What is the average daily activity pattern?</H2>
 The data is now grouped by intervals.
-```{r third}
+```{r}
 data_group_interval=group_by(data_needed,interval)
 hist_data_interval=summarise(data_group_interval,mean(steps))
 plot(hist_data_interval,type='l',ylab="Average Number of Steps",main="Average Daily Pattern",col="red")

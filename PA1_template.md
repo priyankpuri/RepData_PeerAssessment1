@@ -55,7 +55,7 @@ data_group_date=group_by(data_needed,date)
 ggplot(data_group_date, aes(date, steps)) + geom_bar(stat = "identity", colour = "#003399", fill = "#003399", width = 0.7) +  labs(title = "Histogram of Total Number of Steps Taken Each Day", x = "Date", y = "Total number of steps")
 ```
 
-![plot of chunk second](figure/second-1.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 ```r
 summarise(data_group_date, mean(steps),median(steps))
@@ -87,7 +87,7 @@ hist_data_interval=summarise(data_group_interval,mean(steps))
 plot(hist_data_interval,type='l',ylab="Average Number of Steps",main="Average Daily Pattern",col="red")
 ```
 
-![plot of chunk third](figure/third-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
 
 
 </br>The 5 minute interval which contains the maximum steps is <b>835</b>
@@ -112,7 +112,7 @@ newdata_group_date=group_by(newData,date)
 ggplot(newdata_group_date, aes(date, steps)) + geom_bar(stat = "identity", colour = "#003399", fill = "#003399", width = 0.7) +  labs(title = "Histogram of Total Number of Steps Taken Each Day", x = "Date", y = "Total number of steps")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 </br>
 Let us have a look at the mean and median.
 
@@ -148,4 +148,4 @@ averageddata <- aggregate(steps ~ interval + typedate, data=newData, mean)
 ggplot(averageddata, aes(interval, steps)) +   geom_line() +   facet_grid(typedate ~ .)  +labs(title="Weekday vs Weekend Average Steps taken",y="avarage number of steps",x="5-minute interval")
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
