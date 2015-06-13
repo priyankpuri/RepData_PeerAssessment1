@@ -1,7 +1,6 @@
----
-title: "Reproducible Research:Peer Assessment 1"
-output: html_document
----
+
+<H1>Reproducible Research:Peer Assessment 1</H1>
+
 It is assumed that the data to be analysed is already in the Directory.</br>
 Packages Used in the analysis:
 ```{r first,warning=FALSE,message=FALSE,results='asis'}
